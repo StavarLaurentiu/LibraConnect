@@ -31,24 +31,30 @@ void handle_register(Client &client)
     // Create the message
     string message = compute_post_request(IP_PORT, "/api/v1/tema/auth/register", "application/json", body_data, "application/json", "", client.cookies);
 
+    // Open the connection
+    client.socket = open_connection((char *)SERVER_IP, SERVER_PORT, AF_INET, SOCK_STREAM, 0);
+
     // Send the message to the server
     send_to_server(client.socket, message);
 
     // Receive the response from the server
     string response = receive_from_server(client.socket);
+    cout << response << "\n";
 
     // Parse the response body
-    int response_body = response.find(HEADER_TERMINATOR) + HEADER_TERMINATOR_SIZE;
-    cout << response_body << "\n";
-    cout << response.substr(response_body) << "\n";
-    // json response_json = json::parse(response_body.c_str());
+    int response_body_index = response.find(HEADER_TERMINATOR) + HEADER_TERMINATOR_SIZE;
+    string response_body = response.substr(response_body_index);
 
-    // // Check if the response is successful
-    // if (response_json["error"].is_null()) {
-    //     cout << "Successfully registered\n";
-    // } else {
-    //     cout << "ERROR - " << response_json["error"] << "\n";
-    // }
+    // Check if the response is successful
+    if (response_body == "ok") {
+        cout << "SUCCES - Successfully registered\n";
+    } else {
+        json response_json = json::parse(response_body);
+        cout << "ERROR - " << response_json["error"] << "\n";
+    }
+
+    // Close the connection
+    close_connection(client.socket);
 }
 
 // Handle any command that the client sends to the server
@@ -79,7 +85,6 @@ int main(int argc, char *argv[])
 {
     // Create a client
     Client client;
-    client.socket = open_connection((char *)SERVER_IP, SERVER_PORT, AF_INET, SOCK_STREAM, 0);
 
     // Set the server details
     client.server.sin_family = AF_INET;
@@ -99,7 +104,5 @@ int main(int argc, char *argv[])
         handle_command(client, command);
     }
 
-    // Close the connection
-    close_connection(client.socket);
     return 0;
 }
