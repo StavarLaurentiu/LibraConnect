@@ -1,0 +1,468 @@
+==14290== Memcheck, a memory error detector
+==14290== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14290== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==14290== Command: ./client
+==14290== Parent PID: 6592
+==14290== 
+--14290-- 
+--14290-- Valgrind options:
+--14290--    --leak-check=full
+--14290--    --show-leak-kinds=all
+--14290--    --track-origins=yes
+--14290--    --verbose
+--14290--    --log-file=valgrind-out.txt
+--14290-- Contents of /proc/version:
+--14290--   Linux version 5.15.0-107-generic (buildd@bos03-arm64-018) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #117-Ubuntu SMP Mon Apr 29 14:37:09 UTC 2024
+--14290-- 
+--14290-- Arch and hwcaps: ARM64, LittleEndian, v8-fhm-dpbcvadp-sha3-rdm-atomics-fp16-vfp16
+--14290-- Page sizes: currently 4096, max supported 65536
+--14290-- Valgrind library directory: /usr/libexec/valgrind
+--14290-- Reading syms from /home/student/Desktop/Web_Client_REST_API/client
+--14290-- Reading syms from /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+--14290--   Considering /usr/lib/debug/.build-id/0a/fe80ec61fc82f4df4db7f1059e9fdc7f4897b6.debug ..
+--14290--   .. build-id is valid
+--14290-- Reading syms from /usr/libexec/valgrind/memcheck-arm64-linux
+--14290--    object doesn't have a symbol table
+--14290--    object doesn't have a dynamic symbol table
+--14290-- Scheduler: using generic scheduler lock implementation.
+--14290-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==14290== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-14290-by-student-on-???
+==14290== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-14290-by-student-on-???
+==14290== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-14290-by-student-on-???
+==14290== 
+==14290== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==14290== don't want to do, unless you know exactly what you're doing,
+==14290== or are doing some strange experiment):
+==14290==   /usr/bin/vgdb --pid=14290 ...command...
+==14290== 
+==14290== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==14290==   /path/to/gdb ./client
+==14290== and then give GDB the following command
+==14290==   target remote | /usr/bin/vgdb --pid=14290
+==14290== --pid is optional if only one valgrind process is running
+==14290== 
+--14290-- REDIR: 0x401ee40 (ld-linux-aarch64.so.1:strlen) redirected to 0x580b918c (???)
+--14290-- REDIR: 0x401de40 (ld-linux-aarch64.so.1:strcmp) redirected to 0x580b91e0 (???)
+--14290-- REDIR: 0x401dd80 (ld-linux-aarch64.so.1:index) redirected to 0x580b91b4 (???)
+--14290-- Reading syms from /usr/libexec/valgrind/vgpreload_core-arm64-linux.so
+--14290--    object doesn't have a symbol table
+--14290-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so
+--14290--    object doesn't have a symbol table
+--14290-- Reading syms from /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.30
+--14290--    object doesn't have a symbol table
+--14290-- Reading syms from /usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+--14290--    object doesn't have a symbol table
+--14290-- Reading syms from /usr/lib/aarch64-linux-gnu/libc.so.6
+--14290--   Considering /usr/lib/debug/.build-id/9e/27cf97f03940293c6df3b107674ceda9c825d8.debug ..
+--14290--   .. build-id is valid
+==14290== WARNING: new redirection conflicts with existing -- ignoring it
+--14290--     old: 0x04b8e340 (memalign            ) R-> (1011.0) 0x0486a540 memalign
+--14290--     new: 0x04b8e340 (memalign            ) R-> (1017.0) 0x0486a520 aligned_alloc
+==14290== WARNING: new redirection conflicts with existing -- ignoring it
+--14290--     old: 0x04b8e340 (memalign            ) R-> (1011.0) 0x0486a540 memalign
+--14290--     new: 0x04b8e340 (memalign            ) R-> (1017.0) 0x0486a500 aligned_alloc
+==14290== WARNING: new redirection conflicts with existing -- ignoring it
+--14290--     old: 0x04b8e340 (memalign            ) R-> (1011.0) 0x0486a540 memalign
+--14290--     new: 0x04b8e340 (memalign            ) R-> (1017.0) 0x0486a520 aligned_alloc
+==14290== WARNING: new redirection conflicts with existing -- ignoring it
+--14290--     old: 0x04b8e340 (memalign            ) R-> (1011.0) 0x0486a540 memalign
+--14290--     new: 0x04b8e340 (memalign            ) R-> (1017.0) 0x0486a500 aligned_alloc
+--14290-- Reading syms from /usr/lib/aarch64-linux-gnu/libm.so.6
+--14290--   Considering /usr/lib/debug/.build-id/0f/f642069a01ffdc72fb79ed197c00606bb98ad5.debug ..
+--14290--   .. build-id is valid
+--14290-- REDIR: 0x4b91620 (libc.so.6:memchr) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--14290-- REDIR: 0x4b90650 (libc.so.6:strlen) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--14290-- REDIR: 0x4b91f70 (libc.so.6:memcpy) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--14290-- REDIR: 0x4b91990 (libc.so.6:memset) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--14290-- REDIR: 0x4b91850 (libc.so.6:memmove) redirected to 0x4840710 (_vgnU_ifunc_wrapper)
+--14290-- REDIR: 0x4b90a40 (libc.so.6:rindex) redirected to 0x486ac40 (rindex)
+--14290-- REDIR: 0x4b8d640 (libc.so.6:malloc) redirected to 0x4864fe0 (malloc)
+--14290-- REDIR: 0x4b98fc0 (libc.so.6:__GI_memset) redirected to 0x486ee50 (memset)
+--14290-- REDIR: 0x4b998c0 (libc.so.6:__GI_strlen) redirected to 0x486b2a0 (__GI_strlen)
+--14290-- REDIR: 0x4b91680 (libc.so.6:bcmp) redirected to 0x486e5e0 (bcmp)
+--14290-- REDIR: 0x4b99940 (libc.so.6:__strlen_asimd) redirected to 0x486b274 (strlen)
+--14290-- REDIR: 0x4b97b40 (libc.so.6:__GI_memcpy) redirected to 0x486cf00 (__GI_memcpy)
+--14290-- REDIR: 0x4b996c0 (libc.so.6:__GI_memchr) redirected to 0x486c490 (__GI_memchr)
+--14290-- REDIR: 0x4944390 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4865744 (operator new(unsigned long))
+--14290-- REDIR: 0x49412c0 (libstdc++.so.6:operator delete(void*)) redirected to 0x4868000 (operator delete(void*))
+--14290-- REDIR: 0x49412d0 (libstdc++.so.6:operator delete(void*, unsigned long)) redirected to 0x4868280 (operator delete(void*, unsigned long))
+--14290-- REDIR: 0x4b8e470 (libc.so.6:calloc) redirected to 0x4869e90 (calloc)
+--14290-- REDIR: 0x4b8de30 (libc.so.6:realloc) redirected to 0x486a110 (realloc)
+--14290-- REDIR: 0x4b8dbd4 (libc.so.6:free) redirected to 0x4867a60 (free)
+==14290== Invalid read of size 1
+==14290==    at 0x486B278: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x10F547: std::char_traits<char>::length(char const*) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x11277F: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af30 is 0 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 1
+==14290==    at 0x486B28C: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x10F547: std::char_traits<char>::length(char const*) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x11277F: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af31 is 1 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 8
+==14290==    at 0x486CFC8: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af30 is 0 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 8
+==14290==    at 0x486CFDC: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af38 is 8 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 8
+==14290==    at 0x486CFE4: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af40 is 16 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 8
+==14290==    at 0x486CFEC: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af48 is 24 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 8
+==14290==    at 0x486CFD0: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af50 is 32 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== Invalid read of size 2
+==14290==    at 0x486D088: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5b330 is 1,024 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== HEAP SUMMARY:
+==14290==     in use at exit: 0 bytes in 0 blocks
+==14290==   total heap usage: 39 allocs, 39 frees, 81,697 bytes allocated
+==14290== 
+==14290== All heap blocks were freed -- no leaks are possible
+==14290== 
+==14290== ERROR SUMMARY: 1156 errors from 8 contexts (suppressed: 0 from 0)
+==14290== 
+==14290== 1 errors in context 1 of 8:
+==14290== Invalid read of size 2
+==14290==    at 0x486D088: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5b330 is 1,024 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 1 errors in context 2 of 8:
+==14290== Invalid read of size 8
+==14290==    at 0x486CFC8: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af30 is 0 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 1 errors in context 3 of 8:
+==14290== Invalid read of size 1
+==14290==    at 0x486B278: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x10F547: std::char_traits<char>::length(char const*) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x11277F: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af30 is 0 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 31 errors in context 4 of 8:
+==14290== Invalid read of size 8
+==14290==    at 0x486CFD0: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af50 is 32 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 32 errors in context 5 of 8:
+==14290== Invalid read of size 8
+==14290==    at 0x486CFEC: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af48 is 24 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 32 errors in context 6 of 8:
+==14290== Invalid read of size 8
+==14290==    at 0x486CFE4: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af40 is 16 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 32 errors in context 7 of 8:
+==14290== Invalid read of size 8
+==14290==    at 0x486CFDC: __GI_memcpy (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x11381F: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x1127AB: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af38 is 8 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== 
+==14290== 1026 errors in context 8 of 8:
+==14290== Invalid read of size 1
+==14290==    at 0x486B28C: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x10F547: std::char_traits<char>::length(char const*) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x11277F: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137AB3: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Address 0x4d5af31 is 1 bytes inside a block of size 1,027 free'd
+==14290==    at 0x4867AD0: free (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137A93: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==  Block was alloc'd at
+==14290==    at 0x486A190: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==14290==    by 0x137E6B: buffer_add(buffer*, char const*, unsigned long) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x137A8B: receive_from_server[abi:cxx11](int) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10CE6B: handle_login(Client&) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10EFAB: handle_command(Client&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290==    by 0x10F173: main (in /home/student/Desktop/Web_Client_REST_API/client)
+==14290== 
+==14290== ERROR SUMMARY: 1156 errors from 8 contexts (suppressed: 0 from 0)
