@@ -29,7 +29,8 @@ using json = nlohmann::json;
 #define IP_PORT "34.246.184.49:8080"
 
 /* Structure to hold the client details and all the information he needs */
-typedef struct Client {
+typedef struct Client
+{
     // Server details
     int socket;
     struct sockaddr_in server;
