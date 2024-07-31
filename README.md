@@ -1,7 +1,3 @@
-Stavar Laurentiu-Cristian
-Grupa 322CC
-Homework 4 - PCOM
-
 1. Total implementation time: ~12h
 
 2. Tests passed: ALL
